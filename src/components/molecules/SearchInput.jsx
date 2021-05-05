@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { memo } from "react";
 
 export const SearchInput = memo(() => {
-  console.log("***SearchInput");
   return (
     <SContainer>
       <Input placeholder="検索条件を入力" />

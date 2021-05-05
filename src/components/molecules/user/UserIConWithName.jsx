@@ -6,7 +6,6 @@ export const UserIconWithName = memo((props) => {
   const { src, name } = props;
   const { userInfo } = useContext(UserContext); //グローバルなstateを参照
   const isAdmin = userInfo ? userInfo.isAdmin : false;
-  console.log("***UserIconWithName");
   return (
     <SContainer>
       <SImage alt={name} src={src} height={160} width={160} />
