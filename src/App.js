@@ -1,10 +1,9 @@
-import { BrowserRouter } from "react-router-dom";
 import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
 import { SecoundaryButton } from "./components/atoms/button/SecoundaryButton";
 import { SearchInput } from "./components/molecules/SearchInput";
 import { UserCard } from "./components/organisms/user/UserCard";
 import { DefaultLayout } from "./components/templates/DefaultLayout";
-import { HeaderOnly } from "./components/templates/HeaderOnly";
+import { Router } from "./router/Router";
 
 import "./styles.css";
 
@@ -21,14 +20,13 @@ const user = {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <DefaultLayout>
-        <PrimaryButton>テスト</PrimaryButton>
-        <SecoundaryButton>テスト</SecoundaryButton>
-        <br />
-        <SearchInput />
-        <UserCard user={user} />
-      </DefaultLayout>
-    </BrowserRouter>
+    <Router />
+    // <DefaultLayout>
+    //   <PrimaryButton>テスト</PrimaryButton>
+    //   <SecoundaryButton>テスト</SecoundaryButton>
+    //   <br />
+    //   <SearchInput />
+    //   <UserCard user={user} />
+    // </DefaultLayout>
   );
 }
