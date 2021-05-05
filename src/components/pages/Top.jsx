@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { SecoundaryButton } from "../atoms/button/SecoundaryButton";
 import { useHistory } from "react-router-dom";
-import { UserContext } from "../../providers/UserProvider";
+import { useSetRecoilState } from "recoil"; //更新関数のみ使用するのを明示的に示せる（再レンダリングも考慮されている）
+import { UserState } from "../../store/UserState";
 
 export const Top = () => {
   const history = useHistory();
-  const { setUserInfo } = useContext(UserContext);
+  const setUserInfo = useSetRecoilState(UserState);
 
   const onClickAdmin = () => {
     setUserInfo({ isAdmin: true });

@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import React, { memo, useContext } from "react";
-import { UserContext } from "../../../providers/UserProvider";
+import React, { memo } from "react";
+import { useRecoilValue } from "recoil"; //更新関数はなく値参照のみなので、useRecoilStateでなくでOK
+import { UserState } from "../../../store/UserState";
 
 export const UserIconWithName = memo((props) => {
   const { src, name } = props;
-  const { userInfo } = useContext(UserContext); //グローバルなstateを参照
+  const userInfo = useRecoilValue(UserState);
+
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <SContainer>
