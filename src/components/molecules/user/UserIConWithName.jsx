@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import React, { useContext } from "react";
+import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
-  const { src, name, isAdmin } = props;
+  const { src, name } = props;
+  const { userInfo } = useContext(UserContext); //グローバルなstateを参照
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+  console.log(isAdmin);
   return (
     <SContainer>
       <SImage alt={name} src={src} height={160} width={160} />
